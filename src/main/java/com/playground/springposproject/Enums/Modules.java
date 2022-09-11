@@ -29,7 +29,6 @@ public enum Modules {
 
         for(Modules module : Modules.values())
         {
-            System.out.println(module.value);
             if(module.getName().equals(name)) {
                 return module.getValue();
             }
