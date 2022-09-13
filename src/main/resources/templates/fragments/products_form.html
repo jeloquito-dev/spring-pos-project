@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>POS System - Product</title>
+</head>
+<body>
+<div class="ms-5 me-5">
+    <br>
+    <h1><span th:text="'Products - ' + ${action}"></span></h1>
+    <hr class="hr" />
+    <br>
+
+    <div class="container-sm">
+        <form action="#" th:action="@{/product/save}" method="post" th:object="${product}">
+
+            <input type="hidden" name="productId" th:field="*{id}" /><br/>
+
+            <div class="form-outline mb-4">
+                <input type="text" th:field="*{name}" id="productName" class="form-control" />
+                <label class="form-label" for="productName">Product Name</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="text" th:field="*{tag}" id="productTag" class="form-control" />
+                <label class="form-label" for="productTag">Product Tag</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="text" th:field="*{description}" id="productDescription" class="form-control" />
+                <label class="form-label" for="productTag">Product Description</label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block">Save</button>
+        </form>
+    </div>
+
+
+</div>
+</body>
+</html>
